@@ -1,0 +1,39 @@
+= IAM Manager
+
+Create and destroy IAM users on Amazon AWS.
+
+== Setting Up
+
+* Install the boto library for python (`pip install boto`)
+* Place AWS creds at ~/.boto as specified link:http://boto.readthedocs.org/en/latest/boto_config_tut.html[here]
+
+== Usage Examples
+
+.Usage information
+[source,bash]
+--------------------------------------------------------------------------------
+$ python iam_manage.py -h
+--------------------------------------------------------------------------------
+To print usage information about usage and command line options.
+
+.Create Users
+[source,bash]
+--------------------------------------------------------------------------------
+$ python iam_manage.py -u test_user_1 test_user_2 create
+--------------------------------------------------------------------------------
+To create the users "test_user_1" and "test_user_2"
+
+.Delete Users
+[source,bash]
+--------------------------------------------------------------------------------
+$ python iam_manage.py -u test_user_1 test_user_2 delete
+--------------------------------------------------------------------------------
+To delete the users "test_user_1" and "test_user_2"
+
+.Delete Users from a file
+[source,bash]
+--------------------------------------------------------------------------------
+$ python iam_manage.py -f users.txt delete
+--------------------------------------------------------------------------------
+To delete the users listed in the file users.txt (each username
+separated by a newline). The same format also works for user creation.
